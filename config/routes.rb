@@ -53,4 +53,12 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  root 'victims#index'
+
+  get "victims/index"
+  get "victims/list"
+  get "victims/new"
+  get "victims/search"
+
 end
