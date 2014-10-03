@@ -1,3 +1,11 @@
-List of all victims
-
-
+.row
+  - if @victims.empty?
+    h2 There aren't any victims yet.
+    p
+      | You can start by #{link_to "creating a new victim", victims_new_path}.
+  - else
+    table
+      - for victim in @victims do
+        tr
+          td.name = victim.name
+          td.phone_number = victim.phone_number

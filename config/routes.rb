@@ -60,5 +60,6 @@ Rails.application.routes.draw do
   get "victims/list"
   get "victims/new"
   get "victims/search"
+  post "victims/create"
 
 end

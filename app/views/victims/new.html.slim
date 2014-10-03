@@ -1,1 +1,26 @@
-New victim page
+.row
+  .col-md-4
+    h1 Add a New Victim
+    hr
+
+- if @victim.errors.any?
+  .row
+    .col-md-4
+      .bs-callout.bs-callout-danger
+        - for error in @victim.errors.full_messages
+          span
+            = error
+
+.row
+  .col-md-4
+    = form_for @victim, url: {action: "create"}, html: {role: "form"} do |f|
+      .form-group
+        = f.label :phone_number
+        = f.text_field :phone_number, class: "form-control", placeholder: "650-555-5555", autofocus: true
+
+      .form-group
+        = f.label :name, "Name (optional)"
+        = f.text_field :name, class: "form-control", placeholder: "Sterling Archer"
+        /= f.text_area :body, size: "60x12"
+
+      = f.submit "Submit", class: "btn btn-primary", data: {disable_with: "Please wait..."}
