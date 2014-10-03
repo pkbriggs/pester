@@ -5,7 +5,16 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    /! script src="//use.typekit.net/jjo6cmu.js" 
+    /! javascript:
+    /!  | try{Typekit.load();}catch(e){}
   body
+    .row
+      .col-md-10.col-md-offset-1.header_container
+        = image_tag "kimsmall.png", class: "logo_img"
+        a.logo_text href="/" Keeping Up With Kim!
+        hr
+
     #content.row
       .col-md-10.col-md-offset-1
         = yield
