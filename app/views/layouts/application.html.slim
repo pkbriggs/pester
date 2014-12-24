@@ -17,5 +17,8 @@ html
 
     #content.row
       .col-md-10.col-md-offset-1
+        - if flash[:notice]
+          .alert.alert-success
+            = flash[:notice]
         = yield
 

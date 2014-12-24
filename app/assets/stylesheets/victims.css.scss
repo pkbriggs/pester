@@ -27,3 +27,14 @@
     padding-right: 5px;
   }
 }
+
+#content {
+  .list_header {
+    background-color: #F2F3F6;
+    font-weight: bold;
+  }
+
+  ul li {
+    list-style-type: none;
+  }
+}

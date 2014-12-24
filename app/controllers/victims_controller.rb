@@ -13,13 +13,19 @@ class VictimsController < ApplicationController
   def create
     @victim = Victim.new victim_params
     if @victim.save
-      render :text => "hi"
+      flash[:notice] = "Victim added successfully!"
+      redirect_to :action => :show, victim_id: @victim.id
     else
       render :action => :new
     end
   end
 
   def search
+  end
+
+  # Show a specific victim
+  def show
+    @victim = Victim.find(params[:victim_id])
   end
 
   private

@@ -16,6 +16,10 @@ body {
   font-size: 32px;
   color: #222;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .logo_img {
@@ -35,7 +39,9 @@ body {
 }
 
 #content {
-  padding-top: 50px;
+  .small_padding_top {
+    padding-top: 20px;
+  }
 }
 
 .bs-callout {
