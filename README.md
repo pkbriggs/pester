@@ -1,4 +1,2 @@
-pester
-======
-
-Prank
+# Pester
+Pester app
