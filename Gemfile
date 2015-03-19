@@ -24,4 +24,5 @@ gem 'turbolinks'
 gem 'twitter'
 gem 'figaro'
 gem 'phony_rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'twilio-ruby', '~> 3.12'
