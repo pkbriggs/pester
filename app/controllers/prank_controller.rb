@@ -1,4 +1,4 @@
-class VictimController < ApplicationController
+class PrankController < ApplicationController
 
   def new
     @victim = Victim.new
@@ -14,7 +14,7 @@ class VictimController < ApplicationController
     end
   end
 
-  def list
+  def index
     @victims = Victim.all
   end
 
