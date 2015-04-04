@@ -13,6 +13,13 @@
   <span class="navbar_profile">test@example.com <i class="fa fa-angle-down"></i></span>
 </div>
 
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
 <div class="content">
   <%= yield %>
 </div>

@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// Page specific javascript: http://brandonhilkert.com/blog/page-specific-javascript-in-rails/
+//
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
