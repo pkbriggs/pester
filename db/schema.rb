@@ -14,9 +14,11 @@
 ActiveRecord::Schema.define(version: 20150319044243) do
 
   create_table "victims", force: true do |t|
-    t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "phone_number"
     t.boolean  "seen_intro",   default: false
+    t.boolean  "prank_active", default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

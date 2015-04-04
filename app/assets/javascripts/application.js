@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
+//= require spin
+//= require jquery.spin
+//= require jquery-readyselector
 //= require_tree .
