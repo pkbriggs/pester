@@ -7,25 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
+  <%= render "shared/navbar" %>
+  <%= render "shared/alert_messages" %>
 
-<div class="navbar">
-  <span class="navbar_title">KEEPING UP WITH KIM</span>
-  <span class="navbar_profile">test@example.com <i class="fa fa-angle-down"></i></span>
-</div>
+  <div class="content">
+    <%= yield %>
+  </div>
 
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
-<div class="content">
-  <%= yield %>
-</div>
-
-<script src="//use.typekit.net/jjo6cmu.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-
+  <%= render "shared/typekit" %>
 </body>
 </html>

@@ -66,8 +66,7 @@ ActiveRecord::Schema.define(version: 20150404212253) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "victims", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.string   "phone_number"
     t.boolean  "seen_intro",   default: false
     t.boolean  "prank_active", default: true

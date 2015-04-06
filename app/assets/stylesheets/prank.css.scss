@@ -1,11 +1,14 @@
 
 .person_card {
-  // background-color: white;
+  transition: all 400ms ease-in-out;
   border-radius: 8px;
   box-shadow: 0px 1px 2px #D4D4D4;
   width: 300px;
-  // height: 500px;
   background-color: #F6F6F6;
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
 
   .person_card_content_top {
     padding: 20px;
@@ -57,13 +60,11 @@
     text-align: center;
     font-size: 2.0em;
 
-    .first_name {
-      font-weight: 600;
-    }
-
     input {
-      width: 42%;
+      width: 100%;
+      text-align: center;
       font-size: 1.1em;
+      font-weight: 500;
     }
 
     .out_of_focus_input {
@@ -97,4 +98,61 @@
     border: 2px solid transparent;
     color: #AEAEAE;
   }
+
+  .card_dark_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(83, 83, 83, 0.9);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+
+    &:hover {
+      background-color: rgba(83, 83, 83, 0.8);
+    }
+  }
+
+  .card_dark_overlay_text {
+    height: 100%;
+    text-align: center;
+    font-size: 2.5em;
+    color: white;
+
+    div {
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      color: white;
+      text-shadow: 0px 1px 2px #585858;
+    }
+
+    .dark_overlay_plus {
+      display: block;
+      font-size: 1.5em;
+      margin-bottom: -10px;
+      color: white;
+    }
+  }
+
+  .new_person_instructions {
+    padding: 20px;
+    background-color: white;
+  }
+
+  .begin_button {
+    margin-top: 12px;
+  }
+}
+
+.fade_in_right {
+  margin-left: -22px;
+  opacity: 0;
+}
+
+.fade_in_right_target {
+  margin-left: 0px;
+  opacity: 1;
 }

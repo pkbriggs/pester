@@ -1,0 +1,8 @@
+<div class="navbar">
+  <span class="navbar_title">KEEPING UP WITH KIM</span>
+  <% if user_signed_in? %>
+    <a class="navbar_profile" href="#"><%= current_user.email %> <i class="fa fa-angle-down"></i></a>
+  <% else %>
+    <%= link_to "Log In", new_user_session_path, :class => "navbar_profile" %>
+  <% end %>
+</div>

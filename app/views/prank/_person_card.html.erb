@@ -1,0 +1,54 @@
+<!-- Local variables: person, is_new_person -->
+
+<% if is_new_person %>
+  <% person = Victim.new %>
+  <% person.name = "Joe Smith" %>
+  <% person.phone_number = "6505551234" %>
+<% end %>
+
+<div class="person_card">
+  <div class="person_card_header"></div>
+  <div class="person_profile_picture"></div>
+
+  <div class="person_card_content_top">
+    <div class="person_name">
+      <input type="text" class="name_input out_of_focus_input" value="<%= person.name %>" />
+
+    </div>
+    <div class="person_phone_number">
+      <!-- <i class="fa fa-phone"></i> -->
+      <input type="text" class="person_phone_number_text out_of_focus_input" value='<%= person.phone_number.phony_formatted(normalize: "US", spaces: "-") %>' />
+    </div>
+  </div>
+
+  <%# if !is_new_person %>
+  <div class="person_card_messages">
+    <% if is_new_person %>
+      <div class="new_person_instructions hidden">
+        <div>Fill in a name and phone number then hit 'Begin' to start the prank!</div>
+        <div class="button begin_button button_disabled">Begin</div>
+      </div>
+    <% end %>
+
+    <div class="loading_messages_container hidden">
+      <span>Loading messages...</span>
+      <span id="loading-messages-spinner">&nbsp;</span>
+    </div>
+  </div>
+  <%# end %>
+
+  <% if is_new_person # show a dark overlay for the "add new person" card and show instructions %>
+    <!-- <div class="new_person_instructions">
+      <div>Fill in a name and phone number then hit 'Begin' to start the prank!</div>
+      <div class="button begin_button button_disabled">Begin</div>
+    </div> -->
+
+    <div class="card_dark_overlay">
+      <div class="card_dark_overlay_text">
+        <div>
+          <span class="dark_overlay_plus"><i class="fa fa-plus"></i></span>
+          Add New Person</div>
+      </div>
+    </div>
+  <% end %>
+</div>

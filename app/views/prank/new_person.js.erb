@@ -1,0 +1,6 @@
+<%# http://railsnshit.blogspot.com/2013/11/asynchronously-rendering-partials-with.html %>
+<%# http://stackoverflow.com/questions/13545148/rails-respond-to-format-js-api %>
+$("<%= escape_javascript(render partial: 'prank/person_card', locals: { is_new_person: true }) %>").appendTo($(".person_cards")).addClass("fade_in_right").delay(10).queue(function(next){
+  $(this).addClass("fade_in_right_target");
+  next();
+});

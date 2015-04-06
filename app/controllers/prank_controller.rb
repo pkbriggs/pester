@@ -19,6 +19,12 @@ class PrankController < ApplicationController
     @victims = Victim.all
   end
 
+  def new_person
+    respond_to do |format|
+      format.js # will render views/prank/new_person.js.erb
+    end
+  end
+
   private
 
   def victim_params

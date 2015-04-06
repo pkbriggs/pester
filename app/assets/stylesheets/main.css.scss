@@ -37,5 +37,38 @@ body {
     padding-right: 20px;
     font-weight: 400;
     color: white;
+    text-decoration: none;
   }
+}
+
+.button {
+  background-color: #B070BA;
+  color: white;
+  padding: 10px 50px;
+  font-size: 1.5em;
+  text-shadow: 0px 1px 2px #806583;
+  text-align: center;
+  transition: background-color 200ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #C47ECF;
+    text-shadow: 0px 1px 2px #A76BB0;
+  }
+}
+
+.button_disabled {
+  background-color: #B49CB8;
+  color: rgb(231, 231, 231);
+  text-shadow: 0px 1px 2px #A28BA6;
+  cursor: default;
+
+  &:hover {
+    background-color: #B49CB8;
+    text-shadow: 0px 1px 2px #A28BA6;
+  }
+}
+
+.hidden {
+  display: none
 }

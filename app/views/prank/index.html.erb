@@ -1,27 +1,8 @@
-<% @victims.each do |victim| %>
-  <div class="person_card">
-    <div class="person_card_header"></div>
-    <div class="person_profile_picture"></div>
+<div class="person_cards">
+  <% @victims.each do |victim| %>
+    <%= render partial: "prank/person_card", locals: { person: victim } %>
+  <% end %>
+  <%= render partial: "prank/person_card", locals: { is_new_person: true } %>
+</div>
 
-    <div class="person_card_content_top">
-      <div class="person_name">
-        <input type="text" class="first_name out_of_focus_input" style='text-align: right;' value='<%= victim.first_name %>' />
-        <input type="text" class="last_name out_of_focus_input" value='<%= victim.last_name %>' />
 
-        <!-- <span class="first_name"><%= victim.first_name %></span>
-        <%= victim.last_name %> -->
-      </div>
-      <div class="person_phone_number">
-        <!-- <i class="fa fa-phone"></i> -->
-        <input type="text" class="person_phone_number_text out_of_focus_input" value='<%= victim.phone_number.phony_formatted(normalize: "US", spaces: "-") %>' />
-      </div>
-    </div>
-
-    <div class="person_card_messages">
-      <div class="loading_messages_container">
-        <span>Loading messages...</span>
-        <span id="loading-messages-spinner">&nbsp;</span>
-      </div>
-    </div>
-  </div>
-<% end %>

@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   root 'static#index'
 
   get 'prank/' => 'prank#index'
+  get 'message/list'
+  get 'prank/new_person'
 end

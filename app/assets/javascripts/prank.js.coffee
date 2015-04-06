@@ -2,22 +2,53 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-initHandlers = ->
-  $(".person_phone_number_text").focus ->
-    $(".person_phone_number_text").toggleClass("out_of_focus_input")
+initDarkOverlayHandler = ->
+  $(".card_dark_overlay").click ->
+    overlay = $(this)
+    $.get "/prank/new_person", (data, success) ->
+      overlay.remove()
+      initCardEventHandlers()
 
-  $(".person_phone_number_text").blur ->
-    $(".person_phone_number_text").toggleClass("out_of_focus_input")
+
+initCardEventHandlers = ->
+  name_input = $(".name_input:last")
+  phone_number_input = $(".person_phone_number_text:last")
+  begin_button = $(".begin_button:last")
+  new_person_instructions = $(".new_person_instructions:last")
+  loading_messages_container = $(".loading_messages_container:last")
+
+  new_person_instructions.fadeIn "fast"
+
+  phone_number_input.focus ->
+    $(this).toggleClass("out_of_focus_input")
+
+  phone_number_input.blur ->
+    $(this).toggleClass("out_of_focus_input")
+
+
+  phone_number_input.bind "propertychange change keyup input paste", ->
+    if begin_button.hasClass("button_disabled")
+      begin_button.removeClass("button_disabled")
+      begin_button.one "click", ->
+        loading_messages_container.fadeIn "fast"
+        # new_person_instructions.fadeOut "fast"#, ->
+          # beginPrank(phone_number_input.val())
+
+  initDarkOverlayHandler()
+
+
+beginPrank = (phone_number) ->
+  console.log "Going to prank #{phone_number}"
 
 
 loadMessages = ->
-  $.get "/prank/get_messages", (data, status) ->
+  $.get "/message/list", (data, status) ->
     return if status != "success" # TODO: Error handling
     console.log "got data: #{data}"
 
 
 $(".prank.index").ready ->
-  initHandlers()
+  initCardEventHandlers()
   loadMessages()
 
 
